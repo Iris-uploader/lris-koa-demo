@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>渲染默认数据的例子</title>
-    <script src="http://g.tbcdn.cn/kissy/k/1.4.2/seed-min.js" charset="utf-8"></script>
+    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
 
 </head>
 <body>
@@ -47,30 +47,6 @@
 </ul>
 <script>
     var S = KISSY;
-    S.config({
-        packages:[
-            {
-                name:"kg",
-                path:"http://g.tbcdn.cn/kg/",
-                charset:"utf-8",
-                ignorePackageNameInUri:true
-            }
-        ]
-    });
-
-    if (S.Config.debug) {
-        var srcPath = "../";
-        S.config({
-            packages:[
-                {
-                    name:"kg/uploader/2.0.2",
-                    path:srcPath,
-                    charset:"utf-8",
-                    ignorePackageNameInUri:true
-                }
-            ]
-        });
-    }
     S.use('kg/uploader/2.0.2/index,kg/uploader/2.0.2/themes/imageUploader/index,kg/uploader/2.0.2/themes/imageUploader/style.css', function (S, Uploader,ImageUploader) {
         //上传插件
         var plugins = 'kg/uploader/2.0.2/plugins/auth/auth,' +
@@ -82,7 +58,7 @@
         S.use(plugins,function(S,Auth,UrlsInput,ProBars,Filedrop,Preview){
             var uploader = new Uploader('#J_UploaderBtn',{
                 //处理上传的服务器端脚本路径
-                action:"upload.php",
+                action:"upload",
                 multiple:true
             });
             //上传成功后显示图片描述

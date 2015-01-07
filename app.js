@@ -20,6 +20,7 @@ app.use(function *(next){
 });
 
 app.use(serve(__dirname + '/public'));
+app.use(serve(__dirname + '/temp'));
 
 app.use(function *(next){
     var self = this;
@@ -35,20 +36,21 @@ app.use(function *(next){
         var part;
         while (part = yield parts) {
             var mime = part.mime;
+            if(!mime) continue;
             //必须是图片
             if(!/^image\/(\w+)/.test(mime)){
                 this.body = '{"status":0,message:"只允许上传图片"}';
                 return false;
             }
             var time = new Date().valueOf();
-            var p = '/temp/'+time+'.'+RegExp.$1;
-            var target = path.resolve('.'+p);
+            var newFileName = time+'.'+RegExp.$1;
+            var target = path.resolve('./temp/'+newFileName);
 
             var stream = fs.createWriteStream(target);
             part.pipe(stream);
             console.log('uploading %s -> %s', part.filename, stream.path);
             part.on('end',function(){
-                self.body = '{"status":1,"type":"ajax","name":"'+part.filename+'","url":"http://'+self.host+p+'"}';
+                self.body = '{"status":1,"type":"ajax","name":"'+part.filename+'","url":"http://'+self.host+'/'+newFileName+'"}';
             })
         }
     }
