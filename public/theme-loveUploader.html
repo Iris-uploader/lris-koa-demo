@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8"/>
     <title>loveUploader主题 </title>
-    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+    <script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
 </head>
 
 <body>
 <h2>loveUploader主题</h2>
 <ul>
-    <li><a href="https://github.com/KF-kissyForm/butterfly/tree/master/kg/uploader/2.0.2/themes/loveUploader" target="_blank">源码</a></li>
+    <li><a href="https://github.com/KF-kissyForm/butterfly/tree/master/kg/uploader/2.0.3/themes/loveUploader" target="_blank">源码</a></li>
     <li>作者：苏河、明河</li>
     <li>描述：来源于淘宝爱逛街，增加拖拽区域</li>
     <li>案例：淘宝爱逛街</li>
@@ -32,7 +32,7 @@
         packages:[
             {
                 name:"kg",
-                path:"http://g.tbcdn.cn/kg/",
+                path:"//g.alicdn.com/kg/",
                 charset:"utf-8",
                 ignorePackageNameInUri:true
             }
@@ -44,7 +44,7 @@
         S.config({
             packages:[
                 {
-                    name:"kg/uploader/2.0.2",
+                    name:"kg/uploader/2.0.3",
                     path:srcPath,
                     charset:"utf-8",
                     ignorePackageNameInUri:true
@@ -53,13 +53,13 @@
         });
     }
 
-    S.use('kg/uploader/2.0.2/index,kg/uploader/2.0.2/themes/loveUploader/index,kg/uploader/2.0.2/themes/loveUploader/style.css', function (S, Uploader,LoveUploader) {
+    S.use('kg/uploader/2.0.3/index,kg/uploader/2.0.3/themes/loveUploader/index,kg/uploader/2.0.3/themes/loveUploader/style.css', function (S, Uploader,LoveUploader) {
         //上传组件插件
-        var plugins = 'kg/uploader/2.0.2/plugins/auth/auth,' +
-                'kg/uploader/2.0.2/plugins/urlsInput/urlsInput,' +
-                'kg/uploader/2.0.2/plugins/proBars/proBars,' +
-                'kg/uploader/2.0.2/plugins/filedrop/filedrop,' +
-                'kg/uploader/2.0.2/plugins/preview/preview';
+        var plugins = 'kg/uploader/2.0.3/plugins/auth/auth,' +
+                'kg/uploader/2.0.3/plugins/urlsInput/urlsInput,' +
+                'kg/uploader/2.0.3/plugins/proBars/proBars,' +
+                'kg/uploader/2.0.3/plugins/filedrop/filedrop,' +
+                'kg/uploader/2.0.3/plugins/preview/preview';
 
         S.use(plugins,function(S,Auth,UrlsInput,ProBars,Filedrop,Preview){
             var uploader = new Uploader('#J_UploaderBtn',{

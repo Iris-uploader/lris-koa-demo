@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>使用js传参方式上传文件</title>
-    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+    <script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
 </head>
 <body>
 <h2>使用js传参方式上传文件</h2>
@@ -23,7 +23,7 @@
         packages:[
             {
                 name:"kg",
-                path:"http://g.tbcdn.cn/kg/",
+                path:"//g.alicdn.com/kg/",
                 charset:"utf-8",
                 ignorePackageNameInUri:true
             }
@@ -35,7 +35,7 @@
         S.config({
             packages:[
                 {
-                    name:"kg/uploader/2.0.2",
+                    name:"kg/uploader/2.0.3",
                     path:srcPath,
                     charset:"utf-8",
                     ignorePackageNameInUri:true
@@ -43,11 +43,11 @@
             ]
         });
     }
-    S.use('kg/uploader/2.0.2/index,kg/uploader/2.0.2/themes/default/index,kg/uploader/2.0.2/themes/default/style.css', function (S, Uploader,DefaultTheme) {
+    S.use('kg/uploader/2.0.3/index,kg/uploader/2.0.3/themes/default/index,kg/uploader/2.0.3/themes/default/style.css', function (S, Uploader,DefaultTheme) {
         //上传组件插件
-        var plugins = 'kg/uploader/2.0.2/plugins/auth/auth,' +
-                'kg/uploader/2.0.2/plugins/urlsInput/urlsInput,' +
-                'kg/uploader/2.0.2/plugins/proBars/proBars';
+        var plugins = 'kg/uploader/2.0.3/plugins/auth/auth,' +
+                'kg/uploader/2.0.3/plugins/urlsInput/urlsInput,' +
+                'kg/uploader/2.0.3/plugins/proBars/proBars';
 
         S.use(plugins,function(S,Auth,UrlsInput,ProBars){
             var uploader = new Uploader('#J_UploaderBtn',{

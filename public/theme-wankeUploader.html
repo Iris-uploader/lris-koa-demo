@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8"/>
     <title>wankeUploader主题</title>
-    <script src="http://g.tbcdn.cn/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+    <script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
 
 </head>
 <body>
 <h2>wankeUploader主题</h2>
 <ul>
-    <li><a href="https://github.com/KF-kissyForm/butterfly/tree/master/kg/uploader/2.0.2/themes/wankeUploader" target="_blank">源码</a></li>
+    <li><a href="https://github.com/KF-kissyForm/butterfly/tree/master/kg/uploader/2.0.3/themes/wankeUploader" target="_blank">源码</a></li>
     <li>作者：灵吾</li>
     <li>设计：灵吾</li>
     <li>描述：图片上传专用主题</li>
@@ -29,7 +29,7 @@
         packages:[
             {
                 name:"kg",
-                path:"http://g.tbcdn.cn/kg/",
+                path:"//g.alicdn.com/kg/",
                 charset:"utf-8",
                 ignorePackageNameInUri:true
             }
@@ -41,7 +41,7 @@
         S.config({
             packages:[
                 {
-                    name:"kg/uploader/2.0.2",
+                    name:"kg/uploader/2.0.3",
                     path:srcPath,
                     charset:"utf-8",
                     ignorePackageNameInUri:true
@@ -50,9 +50,9 @@
         });
     }
 
-    S.use('kg/uploader/2.0.2/index,kg/uploader/2.0.2/themes/wankeUploader/index.js,kg/uploader/2.0.2/themes/wankeUploader/style.css', function (S, Uploader,WankeUploader) {
+    S.use('kg/uploader/2.0.3/index,kg/uploader/2.0.3/themes/wankeUploader/index.js,kg/uploader/2.0.3/themes/wankeUploader/style.css', function (S, Uploader,WankeUploader) {
         //上传组件插件
-        var plugins = 'kg/uploader/2.0.2/plugins/auth/auth';
+        var plugins = 'kg/uploader/2.0.3/plugins/auth/auth';
 
         S.use(plugins,function(S,Auth){
             var uploader = new Uploader('#J_UploaderBtn',{
