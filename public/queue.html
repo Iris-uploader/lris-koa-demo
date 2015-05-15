@@ -27,11 +27,11 @@
     var S = KISSY;
     S.use('node',function(S,Node){
         var $ = Node.all;
-        S.use('kg/uploader/2.0.3/index,kg/uploader/2.0.3/themes/default/index,kg/uploader/2.0.3/themes/default/style.css', function (S, Uploader,DefaultTheme) {
+        S.use('kg/uploader/3.0.3/index,kg/uploader/3.0.3/themes/default/index,kg/uploader/3.0.3/themes/default/style.css', function (S, Uploader,DefaultTheme) {
             //上传组件插件
-            var plugins = 'kg/uploader/2.0.3/plugins/auth/auth,' +
-                    'kg/uploader/2.0.3/plugins/urlsInput/urlsInput,' +
-                    'kg/uploader/2.0.3/plugins/proBars/proBars';
+            var plugins = 'kg/uploader/3.0.3/plugins/auth/auth,' +
+                    'kg/uploader/3.0.3/plugins/urlsInput/urlsInput,' +
+                    'kg/uploader/3.0.3/plugins/proBars/proBars';
 
             S.use(plugins,function(S,Auth,UrlsInput,ProBars){
                 var uploader = new Uploader('#J_UploaderBtn',{

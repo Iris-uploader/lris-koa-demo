@@ -11,14 +11,6 @@ var path = require('path');
 
 app.use(logger());
 
-// custom 404
-
-app.use(function *(next){
-    yield next;
-    if (this.body || !this.idempotent) return;
-    this.redirect('/404.html');
-});
-
 app.use(serve(__dirname + '/public'));
 app.use(serve(__dirname + '/temp'));
 

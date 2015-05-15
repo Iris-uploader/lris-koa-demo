@@ -9,12 +9,8 @@
 <body>
 <h2>cropUploader主题</h2>
 <ul>
-    <li><a href="https://github.com/KF-kissyForm/butterfly/tree/master/kg/uploader/2.0.3/themes/cropUploader" target="_blank">源码</a></li>
-
     <li>作者：明河、元泉</li>
-    <li>描述：带图片裁剪器的主题，图片裁剪使用元泉开发的组件，非常赞的组件，<a href="http://gallery.kissyui.com/imgcrop/2.0/guide/index.html">API请看文档</a>。</li>
-    <li>版本：1.4</li>
-    <li>兼容：chrome、firefox、IE9、IE8</li>
+    <li>描述：带图片裁剪器的主题，图片裁剪使用元泉开发的组件，非常赞的组件。</li>
 </ul>
 <div class="grid">
     <input type="file" class="g-u" id="J_UploaderBtn" value="上传头像" name="Filedata"  accept="image/*" >
@@ -38,16 +34,17 @@
 <script type="text/javascript">
     var S = KISSY;
 
-    S.use('node,kg/uploader/2.0.3/index,kg/uploader/2.0.3/themes/cropUploader/index,kg/uploader/2.0.3/themes/cropUploader/style.css', function (S, Node,Uploader,CropUploader) {
+    S.use('node,kg/uploader/3.0.3/index,kg/uploader/3.0.3/themes/cropUploader/index,kg/uploader/3.0.3/themes/cropUploader/style.css', function (S, Node,Uploader,CropUploader) {
         var $ = Node.all;
         //上传组件插件
-        var plugins = 'kg/uploader/2.0.3/plugins/auth/auth,' +
-                'kg/uploader/2.0.3/plugins/urlsInput/urlsInput,' +
-                'kg/uploader/2.0.3/plugins/proBars/proBars,' +
-                'kg/uploader/2.0.3/plugins/filedrop/filedrop,' +
-                'kg/uploader/2.0.3/plugins/imgcrop/imgcrop';
+        var plugins = 'kg/uploader/3.0.3/plugins/auth/auth,' +
+                'kg/uploader/3.0.3/plugins/urlsInput/urlsInput,' +
+                'kg/uploader/3.0.3/plugins/proBars/proBars,' +
+                'kg/uploader/3.0.3/plugins/filedrop/filedrop,' +
+                'kg/uploader/3.0.3/plugins/imgcrop/imgcrop,' +
+                'kg/uploader/3.0.3/plugins/preview/preview';
 
-        S.use(plugins,function(S,Auth,UrlsInput,ProBars,Filedrop,Imgcrop){
+        S.use(plugins,function(S,Auth,UrlsInput,ProBars,Filedrop,Imgcrop,Preview){
             var uploader = new Uploader('#J_UploaderBtn',{
                 //处理上传的服务器端脚本路径
                 action:"upload"
@@ -55,7 +52,7 @@
             //使用主题
             uploader.theme(new CropUploader({
                 queueTarget:'#J_UploaderQueue'
-            }))
+            }));
             //验证插件
             uploader.plug(new Auth({
                         //图片最大允许大小
@@ -67,6 +64,8 @@
                     .plug(new ProBars())
                 //拖拽上传
                     .plug(new Filedrop())
+                //图片预览
+                    .plug(new Preview())
             ;
             //图片裁剪
             var imgcrop = new Imgcrop({
@@ -84,7 +83,7 @@
             uploader.plug(imgcrop);
             var crop = imgcrop.get('crop');
             $('#J_Submit').on('click',function(){
-                  S.log(crop.getCropCoords());
+                S.log(crop.getCropCoords());
             })
         });
     })

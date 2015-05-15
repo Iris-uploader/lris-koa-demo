@@ -9,7 +9,7 @@
 <body>
 <h2>refundUploader主题</h2>
 <ul>
-    <li><a href="https://github.com/KF-kissyForm/butterfly/tree/master/kg/uploader/2.0.3/themes/refundUploader" target="_blank">源码</a></li>
+    <li><a href="https://github.com/KF-kissyForm/butterfly/tree/master/kg/uploader/3.0.3/themes/refundUploader" target="_blank">源码</a></li>
     <li>作者：明河</li>
     <li>设计：苛卡</li>
     <li>描述：来源于淘宝退款，亮点在于满最大上传数时按钮文案的变化，v1.4新增图片放大器插件</li>
@@ -43,7 +43,7 @@
         S.config({
             packages:[
                 {
-                    name:"kg/uploader/2.0.3",
+                    name:"kg/uploader/3.0.3",
                     path:srcPath,
                     charset:"utf-8",
                     ignorePackageNameInUri:true
@@ -52,14 +52,14 @@
         });
     }
 
-    S.use('kg/uploader/2.0.3/index,kg/uploader/2.0.3/themes/refundUploader/index,kg/uploader/2.0.3/themes/refundUploader/style.css', function (S, Uploader,RefundUploader) {
+    S.use('kg/uploader/3.0.3/index,kg/uploader/3.0.3/themes/refundUploader/index,kg/uploader/3.0.3/themes/refundUploader/style.css', function (S, Uploader,RefundUploader) {
         //上传组件插件
-        var plugins = 'kg/uploader/2.0.3/plugins/auth/auth,' +
-                'kg/uploader/2.0.3/plugins/urlsInput/urlsInput,' +
-                'kg/uploader/2.0.3/plugins/proBars/proBars,' +
-                'kg/uploader/2.0.3/plugins/filedrop/filedrop,' +
-                'kg/uploader/2.0.3/plugins/preview/preview,' +
-                'kg/uploader/2.0.3/plugins/imageZoom/imageZoom';
+        var plugins = 'kg/uploader/3.0.3/plugins/auth/auth,' +
+                'kg/uploader/3.0.3/plugins/urlsInput/urlsInput,' +
+                'kg/uploader/3.0.3/plugins/proBars/proBars,' +
+                'kg/uploader/3.0.3/plugins/filedrop/filedrop,' +
+                'kg/uploader/3.0.3/plugins/preview/preview,' +
+                'kg/uploader/3.0.3/plugins/imageZoom/imageZoom';
 
         S.use(plugins,function(S,Auth,UrlsInput,ProBars,Filedrop,Preview,ImageZoom){
             var uploader = new Uploader('#J_UploaderBtn',{
