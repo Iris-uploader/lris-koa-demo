@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8"/>
 <title>处理上传后路径的示例</title>
-<link rel="stylesheet" type="text/css" href="http://docs.kissyui.com/kissy-dpl/base/build/css/dpl-pkg.css"/>
+<link rel="stylesheet" type="text/css" href="//docs.kissyui.com/kissy-dpl/base/build/css/dpl-pkg.css"/>
 <link rel="stylesheet" type="text/css" href="../../assets/demo.css"/>
-<script src="http://a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js" charset="utf-8"></script>
+<script src="//a.tbcdn.cn/s/kissy/1.2.0/kissy-min.js" charset="utf-8"></script>
 </head>
 <body>
 <article id="doc">
@@ -16,7 +16,7 @@
     <!-- 上传按钮，组件配置请写在data-config内 -->
     <a id="J_UploaderBtn" class="g-u uploader-button uploader-button-focus" data-config=
             '{"type" : "auto",
-                "serverConfig":{"action":"upload","data":{"dir":"files/"},"dataType" : "json"},
+                "serverConfig":{"action":"upload.php","data":{"dir":"files/"},"dataType" : "json"},
                 "name":"Filedata",
                 "urlsInputName":"fileUrls"}'
        href="#">
@@ -43,7 +43,7 @@
     <pre class='brush: xml; highlight: [4]'>
         <a id="J_UploaderBtn" class="g-u uploader-button uploader-button-focus" data-config=
                 '{"type" : "auto",
-                    "serverConfig":{"action":"upload","data":{"dir":"files/"},"dataType" : "json"},
+                    "serverConfig":{"action":"upload.php","data":{"dir":"files/"},"dataType" : "json"},
                     "name":"Filedata",
                     "urlsInputName":"fileUrls"}'
            href="#">
@@ -76,7 +76,7 @@
         packages:[
             {
                 name:"kg",
-                path:"//g.alicdn.com/kg/",
+                path:"//g.tbcdn.cn/kg/",
                 charset:"utf-8",
                 ignorePackageNameInUri:true
             }
@@ -88,7 +88,7 @@
         S.config({
             packages:[
                 {
-                    name:"kg/uploader/3.0.3",
+                    name:"kg/uploader/6.2.7",
                     path:srcPath,
                     charset:"utf-8",
                     ignorePackageNameInUri:true
@@ -97,7 +97,7 @@
         });
     }
     //加载上传组件入口文件
-    KISSY.use('kg/uploader/3.0.3/index', function (S, RenderUploader) {
+    KISSY.use('kg/uploader/6.2.7/index', function (S, RenderUploader) {
         //第一个参数：按钮元素钩子，第二个参数：队列元素钩子
         var ru = new RenderUploader('#J_UploaderBtn', '#J_UploaderQueue');
         //对组件的后续操作务必放在init事件内，因为组件时可能需要异步加载模板
@@ -121,5 +121,5 @@
 <script type="text/javascript" src="../../assets/syntaxhighlighter_3.0.83/sh.js"></script>
 <script type="text/javascript">SyntaxHighlighter.all();</script>
 <!-- 代码高亮 END  -->
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=40031757" charset="UTF-8"></script></body>
+</body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>定制自己的主题</title>
-    <script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+    <script src="//g.alicdn.com/kissy/k/6.2.0/seed-min.js" charset="utf-8"></script>
 
 </head>
 <body>
@@ -22,7 +22,7 @@
         packages:[
             {
                 name:"kg",
-                path:"//g.alicdn.com/kg/",
+                path:"//g.tbcdn.cn/kg/",
                 charset:"utf-8",
                 ignorePackageNameInUri:true
             }
@@ -34,7 +34,7 @@
         S.config({
             packages:[
                 {
-                    name:"kg/uploader/3.0.3",
+                    name:"kg/uploader/6.2.7",
                     path:srcPath,
                     charset:"utf-8",
                     ignorePackageNameInUri:true
@@ -79,7 +79,7 @@
                             '<div class="f-l status-wrapper">' +
                                 '<div class="status waiting-status">等待上传，<a class="J_Upload_{id}" href="#Upload">点此上传</a> </div>' +
                                 '<div class="status start-status progress-status success-status clearfix">' +
-                                '<div class="J_ProgressBar_{id} f-l uploader-progress"><img class="loading" src="http://img01.taobaocdn.com/tps/i1/T1F5tVXjRfXXXXXXXX-16-16.gif" alt="loading" /></div>' +
+                                '<div class="J_ProgressBar_{id} f-l uploader-progress"><img class="loading" src="//img01.taobaocdn.com/tps/i1/T1F5tVXjRfXXXXXXXX-16-16.gif" alt="loading" /></div>' +
                                 ' <a  class="J_Cancel_{id} f-l upload-cancel" href="#uploadCancel">取消</a>' +
                                 '<a href="#fileDel" class=" f-l J_Del_{id}" style="display:none;">删除</a>' +
                                 '</div> ' +
@@ -91,13 +91,13 @@
             }
         }});
         return CustomTheme;
-    },{requires:['node', 'kg/uploader/3.0.3/themes/default/']});
+    },{requires:['node', 'kg/uploader/6.2.7/themes/default/']});
 
-    KISSY.use('kg/uploader/3.0.3/index,customTheme,kg/uploader/3.0.3/themes/default/style.css', function (S, Uploader,CustomTheme) {
+    KISSY.use('kg/uploader/6.2.7/index,customTheme,kg/uploader/6.2.7/themes/default/style.css', function (S, Uploader,CustomTheme) {
 
         var uploader = new Uploader('#J_JsUploaderBtn',{
             //处理上传的服务器端脚本路径
-            action:"upload"
+            action:"upload.php"
         });
 
         uploader.use('auth',{
@@ -117,5 +117,5 @@
     })
 
 </script>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=40031757" charset="UTF-8"></script></body>
+</body>
 </html>

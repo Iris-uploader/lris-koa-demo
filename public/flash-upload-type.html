@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>只使用flash上传的demo</title>
-    <script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+    <script src="//g.alicdn.com/kissy/k/6.2.0/seed-min.js" charset="utf-8"></script>
 
 </head>
 <body>
@@ -29,7 +29,7 @@
         packages:[
             {
                 name:"kg",
-                path:"//g.alicdn.com/kg/",
+                path:"//g.tbcdn.cn/kg/",
                 charset:"utf-8",
                 ignorePackageNameInUri:true
             }
@@ -41,7 +41,7 @@
         S.config({
             packages:[
                 {
-                    name:"kg/uploader/3.0.3",
+                    name:"kg/uploader/6.2.7",
                     path:srcPath,
                     charset:"utf-8",
                     ignorePackageNameInUri:true
@@ -50,11 +50,11 @@
         });
     }
 
-    S.use('kg/uploader/3.0.3/index,kg/uploader/3.0.3/themes/default/index,kg/uploader/3.0.3/themes/default/style.css', function (S, Uploader,DefaultTheme) {
+    S.use('kg/uploader/6.2.7/index,kg/uploader/6.2.7/themes/default/index,kg/uploader/6.2.7/themes/default/style.css', function (S, Uploader,DefaultTheme) {
         //上传组件插件
-        var plugins = 'kg/uploader/3.0.3/plugins/auth/auth,' +
-                'kg/uploader/3.0.3/plugins/urlsInput/urlsInput,' +
-                'kg/uploader/3.0.3/plugins/proBars/proBars';
+        var plugins = 'kg/uploader/6.2.7/plugins/auth/auth,' +
+                'kg/uploader/6.2.7/plugins/urlsInput/urlsInput,' +
+                'kg/uploader/6.2.7/plugins/proBars/proBars';
 
         S.use(plugins,function(S,Auth,UrlsInput,ProBars,Filedrop,Preview){
             var flashUploader = new Uploader('#J_UploaderBtn', {
@@ -62,7 +62,7 @@
                 type:"flash",
                 //手动控制flash的尺寸
                 swfSize:{"width":200, "height":25},
-                action:"upload"
+                action:"upload.php"
             });
             //使用主题
             flashUploader.theme(new DefaultTheme({
@@ -113,5 +113,5 @@
         });
     })
 </script>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=40031757" charset="UTF-8"></script></body>
+</body>
 </html>

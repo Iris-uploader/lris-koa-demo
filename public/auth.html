@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>上传验证控制的demo</title>
-<script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+<script src="//g.alicdn.com/kissy/k/6.2.0/seed-min.js" charset="utf-8"></script>
 
 </head>
 <body>
@@ -23,19 +23,43 @@
 
 <script type="text/javascript">
     var S = KISSY;
+    S.config({
+        packages:[
+            {
+                name:"kg",
+                path:"//g.tbcdn.cn/kg/",
+                charset:"utf-8",
+                ignorePackageNameInUri:true
+            }
+        ]
+    });
 
-    S.use('node,kg/uploader/3.0.3/index,kg/uploader/3.0.3/themes/imageUploader/index,kg/uploader/3.0.3/themes/imageUploader/style.css', function (S,Node,Uploader,ImageUploader) {
+    if (S.Config.debug) {
+        var srcPath = "../";
+        S.config({
+            packages:[
+                {
+                    name:"kg/uploader/6.2.7",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+
+    S.use('node,kg/uploader/6.2.7/index,kg/uploader/6.2.7/themes/imageUploader/index,kg/uploader/6.2.7/themes/imageUploader/style.css', function (S,Node,Uploader,ImageUploader) {
         var $ = Node.all;
         //上传组件插件
-        var plugins = 'kg/uploader/3.0.3/plugins/auth/auth,' +
-                'kg/uploader/3.0.3/plugins/tagConfig/tagConfig,' +
-                'kg/uploader/3.0.3/plugins/urlsInput/urlsInput,' +
-                'kg/uploader/3.0.3/plugins/proBars/proBars,' +
-                'kg/uploader/3.0.3/plugins/filedrop/filedrop,' +
-                'kg/uploader/3.0.3/plugins/preview/preview';
+        var plugins = 'kg/uploader/6.2.7/plugins/auth/auth,' +
+                'kg/uploader/6.2.7/plugins/tagConfig/tagConfig,' +
+                'kg/uploader/6.2.7/plugins/urlsInput/urlsInput,' +
+                'kg/uploader/6.2.7/plugins/proBars/proBars,' +
+                'kg/uploader/6.2.7/plugins/filedrop/filedrop,' +
+                'kg/uploader/6.2.7/plugins/preview/preview';
         S.use(plugins,function(S,Auth,TagConfig,UrlsInput,ProBars,Filedrop,Preview){
             var authUploader = new Uploader('#J_AuthBtn',{
-                action:"upload",
+                action:"upload.php",
                 data:{'author':'minghe'}
             });
 
@@ -92,5 +116,5 @@
     })
 
 </script>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=40031757" charset="UTF-8"></script></body>
+</body>
 </html>

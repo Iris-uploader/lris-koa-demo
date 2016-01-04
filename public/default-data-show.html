@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <title>渲染默认数据的例子</title>
-    <script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+    <script src="//g.alicdn.com/kissy/k/6.2.0/seed-min.js" charset="utf-8"></script>
 
 </head>
 <body>
@@ -20,7 +20,7 @@
     <script type="text/uploader-files">
         [{
         "name":"icon_evil.gif",
-        "url": "http://tp4.sinaimg.cn/1653905027/50/5601547226/1",
+        "url": "//tp4.sinaimg.cn/1653905027/50/5601547226/1",
         "desc":"默认数据的图片描述"
         }]
     </script>
@@ -47,18 +47,42 @@
 </ul>
 <script>
     var S = KISSY;
-    S.use('kg/uploader/3.0.3/index,kg/uploader/3.0.3/themes/imageUploader/index,kg/uploader/3.0.3/themes/imageUploader/style.css', function (S, Uploader,ImageUploader) {
+    S.config({
+        packages:[
+            {
+                name:"kg",
+                path:"//g.tbcdn.cn/kg/",
+                charset:"utf-8",
+                ignorePackageNameInUri:true
+            }
+        ]
+    });
+
+    if (S.Config.debug) {
+        var srcPath = "../";
+        S.config({
+            packages:[
+                {
+                    name:"kg/uploader/6.2.7",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+    S.use('kg/uploader/6.2.7/index,kg/uploader/6.2.7/themes/imageUploader/index,kg/uploader/6.2.7/themes/imageUploader/style.css', function (S, Uploader,ImageUploader) {
         //上传插件
-        var plugins = 'kg/uploader/3.0.3/plugins/auth/auth,' +
-                'kg/uploader/3.0.3/plugins/urlsInput/urlsInput,' +
-                'kg/uploader/3.0.3/plugins/proBars/proBars,' +
-                'kg/uploader/3.0.3/plugins/filedrop/filedrop,' +
-                'kg/uploader/3.0.3/plugins/preview/preview';
+        var plugins = 'kg/uploader/6.2.7/plugins/auth/auth,' +
+                'kg/uploader/6.2.7/plugins/urlsInput/urlsInput,' +
+                'kg/uploader/6.2.7/plugins/proBars/proBars,' +
+                'kg/uploader/6.2.7/plugins/filedrop/filedrop,' +
+                'kg/uploader/6.2.7/plugins/preview/preview';
 
         S.use(plugins,function(S,Auth,UrlsInput,ProBars,Filedrop,Preview){
             var uploader = new Uploader('#J_UploaderBtn',{
                 //处理上传的服务器端脚本路径
-                action:"upload",
+                action:"upload.php",
                 multiple:true
             });
             //上传成功后显示图片描述
@@ -96,5 +120,5 @@
     })
 
 </script>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=40031757" charset="UTF-8"></script></body>
+</body>
 </html>

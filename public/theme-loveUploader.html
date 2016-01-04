@@ -1,15 +1,15 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "//www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta charset="utf-8"/>
     <title>loveUploader主题 </title>
-    <script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js" charset="utf-8"></script>
+    <script src="//g.alicdn.com/kissy/k/6.2.0/seed-min.js" charset="utf-8"></script>
 </head>
 
 <body>
 <h2>loveUploader主题</h2>
 <ul>
-    <li><a href="https://github.com/KF-kissyForm/butterfly/tree/master/kg/uploader/3.0.3/themes/loveUploader" target="_blank">源码</a></li>
+    <li><a href="https://github.com/KF-kissyForm/butterfly/tree/master/kg/uploader/6.2.7/themes/loveUploader" target="_blank">源码</a></li>
     <li>作者：苏河、明河</li>
     <li>描述：来源于淘宝爱逛街，增加拖拽区域</li>
     <li>案例：淘宝爱逛街</li>
@@ -32,7 +32,7 @@
         packages:[
             {
                 name:"kg",
-                path:"//g.alicdn.com/kg/",
+                path:"//g.tbcdn.cn/kg/",
                 charset:"utf-8",
                 ignorePackageNameInUri:true
             }
@@ -44,7 +44,7 @@
         S.config({
             packages:[
                 {
-                    name:"kg/uploader/3.0.3",
+                    name:"kg/uploader/6.2.7",
                     path:srcPath,
                     charset:"utf-8",
                     ignorePackageNameInUri:true
@@ -53,18 +53,18 @@
         });
     }
 
-    S.use('kg/uploader/3.0.3/index,kg/uploader/3.0.3/themes/loveUploader/index,kg/uploader/3.0.3/themes/loveUploader/style.css', function (S, Uploader,LoveUploader) {
+    S.use('kg/uploader/6.2.7/index,kg/uploader/6.2.7/themes/loveUploader/index,kg/uploader/6.2.7/themes/loveUploader/style.css', function (S, Uploader,LoveUploader) {
         //上传组件插件
-        var plugins = 'kg/uploader/3.0.3/plugins/auth/auth,' +
-                'kg/uploader/3.0.3/plugins/urlsInput/urlsInput,' +
-                'kg/uploader/3.0.3/plugins/proBars/proBars,' +
-                'kg/uploader/3.0.3/plugins/filedrop/filedrop,' +
-                'kg/uploader/3.0.3/plugins/preview/preview';
+        var plugins = 'kg/uploader/6.2.7/plugins/auth/auth,' +
+                'kg/uploader/6.2.7/plugins/urlsInput/urlsInput,' +
+                'kg/uploader/6.2.7/plugins/proBars/proBars,' +
+                'kg/uploader/6.2.7/plugins/filedrop/filedrop,' +
+                'kg/uploader/6.2.7/plugins/preview/preview';
 
         S.use(plugins,function(S,Auth,UrlsInput,ProBars,Filedrop,Preview){
             var uploader = new Uploader('#J_UploaderBtn',{
                 //处理上传的服务器端脚本路径
-                action:"upload"
+                action:"upload.php"
             });
             //使用主题
             uploader.theme(new LoveUploader({
@@ -90,5 +90,5 @@
     })
 
 </script>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=40031757" charset="UTF-8"></script></body>
+</body>
 </html>
